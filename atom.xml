@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://towelong.github.io/</id>
     <title>WeLong&apos;闲言碎语</title>
-    <updated>2019-10-20T10:16:19.692Z</updated>
+    <updated>2019-10-20T10:35:25.385Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://towelong.github.io/"/>
     <link rel="self" href="https://towelong.github.io//atom.xml"/>
@@ -10,6 +10,86 @@
     <logo>https://towelong.github.io//images/avatar.png</logo>
     <icon>https://towelong.github.io//favicon.ico</icon>
     <rights>All rights reserved 2019, WeLong&apos;闲言碎语</rights>
+    <entry>
+        <title type="html"><![CDATA[企业官网接口设计]]></title>
+        <id>https://towelong.github.io//post/qiyeapi</id>
+        <link href="https://towelong.github.io//post/qiyeapi">
+        </link>
+        <updated>2019-10-20T10:32:44.000Z</updated>
+        <summary type="html"><![CDATA[<ul class="contains-task-list">
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-6005702"><label class="task-list-item-label" for="task-item-6005702"> 轮播图(banner)</label>
+<ul>
+<li>添加(POST  /banner)</li>
+<li>编辑(PUT /banner)</li>
+<li>删除(DELETE  /banner/:id)</li>
+<li>查询(GET /banner)</li>
+<li>查询单条(GET /banner/:id)</li>
+</ul>
+</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-99031"><label class="task-list-item-label" for="task-item-99031"> 案例展示图(example)</label>
+<ul>
+<li>添加(POST  /example)</li>
+<li>编辑(PUT /example)</li>
+<li>删除(DELETE  /example/:id)</li>
+<li>查询(GET /example)</li>
+<li>查询单条(GET /example/:id)</li>
+</ul>
+</li>
+</ul>
+]]></summary>
+        <content type="html"><![CDATA[<ul class="contains-task-list">
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-5662009"><label class="task-list-item-label" for="task-item-5662009"> 轮播图(banner)</label>
+<ul>
+<li>添加(POST  /banner)</li>
+<li>编辑(PUT /banner)</li>
+<li>删除(DELETE  /banner/:id)</li>
+<li>查询(GET /banner)</li>
+<li>查询单条(GET /banner/:id)</li>
+</ul>
+</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-8269896"><label class="task-list-item-label" for="task-item-8269896"> 案例展示图(example)</label>
+<ul>
+<li>添加(POST  /example)</li>
+<li>编辑(PUT /example)</li>
+<li>删除(DELETE  /example/:id)</li>
+<li>查询(GET /example)</li>
+<li>查询单条(GET /example/:id)</li>
+</ul>
+</li>
+</ul>
+<!-- more -->
+<ul class="contains-task-list">
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-7338459"><label class="task-list-item-label" for="task-item-7338459"> 文章(article)</label>
+<ul>
+<li>添加(POST  /article)</li>
+<li>编辑(PUT /article)</li>
+<li>删除(DELETE  /article/:id)</li>
+<li>查询(GET /article)</li>
+<li>查询单条(GET /article/:id)</li>
+</ul>
+</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-759969"><label class="task-list-item-label" for="task-item-759969"> 首页中间部分主图(middle)</label>
+<ul>
+<li>添加(POST  /middle)</li>
+<li>编辑(PUT /middle)</li>
+<li>删除(DELETE  /middle/:id)</li>
+<li>查询(GET /middle)</li>
+<li>查询单条(GET /middle/:id)</li>
+</ul>
+</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-7938754"><label class="task-list-item-label" for="task-item-7938754"> 关于我们(about)</label>
+<ul>
+<li>添加(POST  /about)</li>
+<li>编辑(PUT /about)</li>
+<li>删除(DELETE  /about/:id)</li>
+<li>查询(GET /about)</li>
+<li>查询单条(GET /about/:id)</li>
+</ul>
+</li>
+</ul>
+<!-- more -->
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
         <id>https://towelong.github.io//post/hello-gridea</id>
