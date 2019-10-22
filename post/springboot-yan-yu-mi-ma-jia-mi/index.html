@@ -2,9 +2,9 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>企业官网接口设计 | WeLong&#39;闲言碎语</title>
+<title>SpringBoot盐与密码加密 | WeLong&#39;闲言碎语</title>
 <meta name="description" content="学的不多，用心就好！" />
-<link rel="shortcut icon" href="https://towelong.github.io//favicon.ico?v=1571574769102">
+<link rel="shortcut icon" href="https://towelong.github.io//favicon.ico?v=1571739946547">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://towelong.github.io//styles/main.css">
@@ -20,7 +20,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://towelong.github.io/">
-  <img class="avatar" src="https://towelong.github.io//images/avatar.png?v=1571574769102" alt="">
+  <img class="avatar" src="https://towelong.github.io//images/avatar.png?v=1571739946547" alt="">
   </a>
   <h1 class="site-title">
     WeLong&#39;闲言碎语
@@ -77,95 +77,82 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              企业官网接口设计
+              SpringBoot盐与密码加密
             </h2>
             <div class="post-info">
               <span>
-                2019-10-20
+                2019-10-22
               </span>
               <span>
-                1 min read
+                2 min read
               </span>
               
-                <a href="https://towelong.github.io//tag/aI4FUf_MX" class="post-tag">
-                  # RestfulAPI
+                <a href="https://towelong.github.io//tag/gwA776xMP" class="post-tag">
+                  # SpringBoot
                 </a>
               
             </div>
             
-              <img class="post-feature-image" src="https://towelong.github.io//post-images/hello-gridea.png" alt="">
+              <img class="post-feature-image" src="https://towelong.github.io//post-images/springboot-yan-yu-mi-ma-jia-mi.png" alt="">
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-2244498"><label class="task-list-item-label" for="task-item-2244498"> 轮播图(banner)</label>
-<ul>
-<li>添加(POST  /banner)</li>
-<li>编辑(PUT /banner)</li>
-<li>删除(DELETE  /banner/:id)</li>
-<li>查询(GET /banner)</li>
-<li>查询单条(GET /banner/:id)</li>
-</ul>
-</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-3142354"><label class="task-list-item-label" for="task-item-3142354"> 案例展示图(example)</label>
-<ul>
-<li>添加(POST  /example)</li>
-<li>编辑(PUT /example)</li>
-<li>删除(DELETE  /example/:id)</li>
-<li>查询(GET /example)</li>
-<li>查询单条(GET /example/:id)</li>
-</ul>
-</li>
-</ul>
+                <blockquote>
+<p>在学习<code>SpringBoot</code>的过程中，碰到了用户密码加密的问题，因为密码是不能以明文储存的，这是对用户负责</p>
+</blockquote>
 <!-- more -->
-<ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-6688766"><label class="task-list-item-label" for="task-item-6688766"> 文章(article)</label>
-<ul>
-<li>添加(POST  /article)</li>
-<li>编辑(PUT /article)</li>
-<li>删除(DELETE  /article/:id)</li>
-<li>查询(GET /article)</li>
-<li>查询单条(GET /article/:id)</li>
-</ul>
-</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-4448222"><label class="task-list-item-label" for="task-item-4448222"> 首页中间部分主图(middle)</label>
-<ul>
-<li>添加(POST  /middle)</li>
-<li>编辑(PUT /middle)</li>
-<li>删除(DELETE  /middle/:id)</li>
-<li>查询(GET /middle)</li>
-<li>查询单条(GET /middle/:id)</li>
-</ul>
-</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-9674562"><label class="task-list-item-label" for="task-item-9674562"> 关于我们(about)</label>
-<ul>
-<li>添加(POST  /about)</li>
-<li>编辑(PUT /about)</li>
-<li>删除(DELETE  /about/:id)</li>
-<li>查询(GET /about)</li>
-<li>查询单条(GET /about/:id)</li>
-</ul>
-</li>
-</ul>
-<!-- more -->
+<h2 id="首先">首先</h2>
+<p>​        我在百度和谷歌找了好多种解决方案，但是答案基本上千篇一律，都是一样的，而且只有部分才能解决问题，然后多亏<code>LinCMS</code>开源团队找到了我想要的解决方案，此前在查资料的过程中，找到的一种解决方案中，有一种可以解决，就是<code>Spring security</code>中的<code>BCryptPasswordEncoder</code>方法对密码进行加密，我测试了一下确实可以，而且和我预想中的一模一样，就是同一个密码在加密的时候每次得到的加密字符串都是不一样的，但是唯一一点让我很无奈的是，用<code>Spring security</code>会捆绑一系列的配置，况且我也没用到它，所以这个方案直接被我Pass掉了。</p>
+<h2 id="其次">其次</h2>
+<p>​      我再说第二种解决方案，使用<code>jhash</code>、<code>jotp</code></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">依赖</th>
+<th style="text-align:left">Github地址</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">jhash</td>
+<td style="text-align:left">https://github.com/amdelamar/jhash</td>
+</tr>
+<tr>
+<td style="text-align:left">jotp</td>
+<td style="text-align:left">https://github.com/amdelamar/jotp</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-java">    @Test
+    public void test() throws InvalidHashException {
+        char[] password = &quot;Hello World!&quot;.toCharArray();
+        String hash = Hash.password(password).algorithm(Type.BCRYPT).create();
+        System.out.println(hash);
+        if(Hash.password(password).verify(&quot;bcrypt:13:60:16:n::$2a$13$aIPs6auOGff6bWWRNmfZleD1rzUQq2Owk8tSKeM9T8t2QqW7yTud.&quot;)) {
+            // Passwords match. Login successful!
+            System.out.println(&quot;success&quot;);
+        }
+    }
+</code></pre>
+<p>这是一小段测试代码，然后加密方式不止<code>BCRYPT</code>这种，也是就盐加密，我选的是这种，其实还有很多具体查看官方文档。<br>
+<img src="https://towelong.github.io//post-images/1571739897849.png" alt=""></p>
 
               </div>
               <div class="toc-container">
-                
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E9%A6%96%E5%85%88">首先</a></li>
+<li><a href="#%E5%85%B6%E6%AC%A1">其次</a></li>
+</ul>
+</li>
+</ul>
+
               </div>
             </div>
           </article>
         </div>
 
-        
-          <div class="next-post">
-            <div class="next">下一篇</div>
-            <a href="https://towelong.github.io//post/hello-gridea">
-              <h3 class="post-title">
-                Hello Gridea
-              </h3>
-            </a>
-          </div>
         
 
         
