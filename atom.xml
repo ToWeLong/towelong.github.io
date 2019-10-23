@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://towelong.github.io/</id>
     <title>WeLong&apos;闲言碎语</title>
-    <updated>2019-10-23T05:59:36.222Z</updated>
+    <updated>2019-10-23T06:15:50.873Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://towelong.github.io/"/>
     <link rel="self" href="https://towelong.github.io//atom.xml"/>
@@ -16,11 +16,18 @@
         <link href="https://towelong.github.io//post/springboot-exception">
         </link>
         <updated>2019-10-23T05:55:43.000Z</updated>
+        <summary type="html"><![CDATA[<blockquote>
+<p>下层基础决定上层建筑，所以我今天研究了一波异常处理机制。</p>
+</blockquote>
+<h2 id="为什么要研究下层基础呢">为什么要研究“下层基础”呢？</h2>
+<p>首先，当只有把基础设施给建设完全我们才能快速进行开发，因为<code>SpringBoot</code>相对于<code>Spring</code>而言，已经提高了我们的开发效率，我们只需要在此基础上再完善，最终才能帮助我们快速开发。</p>
+]]></summary>
         <content type="html"><![CDATA[<blockquote>
 <p>下层基础决定上层建筑，所以我今天研究了一波异常处理机制。</p>
 </blockquote>
 <h2 id="为什么要研究下层基础呢">为什么要研究“下层基础”呢？</h2>
 <p>首先，当只有把基础设施给建设完全我们才能快速进行开发，因为<code>SpringBoot</code>相对于<code>Spring</code>而言，已经提高了我们的开发效率，我们只需要在此基础上再完善，最终才能帮助我们快速开发。</p>
+<!-- more -->
 <p>话不多说，接下来讲讲我研究的一种思路。</p>
 <h3 id="全局异常处理">全局异常处理</h3>
 <p>我们首先在<code>SpringBoot</code>工程下创建一个名为<code>exception</code>的包，然后在包下面新建一个类叫<code>GlobalException</code> ,我们利用<code>@ControllerAdvice</code>注解来捕获异常。</p>
