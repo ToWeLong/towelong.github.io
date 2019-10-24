@@ -1,0 +1,236 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>SpringBoot解决跨域问题 | WeLong&#39;闲言碎语</title>
+<meta name="description" content="学的不多，用心就好！" />
+<link rel="shortcut icon" href="https://towelong.github.io//favicon.ico?v=1571893628394">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://towelong.github.io//styles/main.css">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://towelong.github.io/">
+  <img class="avatar" src="https://towelong.github.io//images/avatar.png?v=1571893628394" alt="">
+  </a>
+  <h1 class="site-title">
+    WeLong&#39;闲言碎语
+  </h1>
+  <p class="site-description">
+    学的不多，用心就好！
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/towelong" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              SpringBoot解决跨域问题
+            </h2>
+            <div class="post-info">
+              <span>
+                2019-10-24
+              </span>
+              <span>
+                3 min read
+              </span>
+              
+                <a href="https://towelong.github.io//tag/gwA776xMP" class="post-tag">
+                  # SpringBoot
+                </a>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://towelong.github.io//post-images/springboot-cors.jpg" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <h2 id="什么是跨域">什么是跨域？</h2>
+<p>定义：浏览器从一个域名的网页取请求另一个域名下的东西。通俗点说，浏览器直接从A域访问B域中的资源是不被允许的，如果想要访问，就需要进行一步操作，这操作就叫“跨域”。例如，你从百度的页面，点击一个按钮，请求了新浪的一个接口，这就进行了跨域。不单单只有域名不同就是跨域，域名、端口、协议其一不同就是不同的域，请求资源需要跨域。</p>
+<!-- more -->
+<h2 id="为什么要跨域">为什么要跨域？</h2>
+<p>为什么需要跨域，而不直接访问其他域下的资源呢？这是浏览器的限制，专业点说叫浏览器同源策略限制。主要是为了安全考虑。现在的安全框架，一般请求的时候header中不是都存个token嘛，你要是用这个token去正常访问A域下的东西是没问题的，然后又去访问了B域，结果阴差阳错的还带着这个token，那么B域，或者说B网站是不是就可以拿着你的token去A域下做点什么呢，这就相当危险了。所以浏览器加上了所谓的浏览器同源策略限制。但是为了我们真的需要从A域下访问B的资源（正常访问），就需要用到跨域，跨越这个限制了。</p>
+<h2 id="springboot解决跨域问题">SpringBoot解决跨域问题</h2>
+<blockquote>
+<p><code>SpringBoot</code>可以基于<code>Cors</code>解决跨域问题，<code>Cors</code>是一种机制，告诉我们的后台，哪边（<code>origin</code>）来的请求可以访问服务器的数据。</p>
+</blockquote>
+<h3 id="全局配置跨域">全局配置跨域</h3>
+<pre><code class="language-java">@Configuration
+public class GlobalCors implements WebMvcConfigurer {
+
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping(&quot;/**&quot;) // 添加跨域路由路径
+            .allowedOrigins(&quot;*&quot;) // 放行哪些原始域
+            .allowCredentials(true) // 是否发送Cookie信息
+            .allowedMethods(&quot;GET&quot;, &quot;POST&quot;, &quot;PUT&quot;, &quot;DELETE&quot;) // 放行哪些原始域(请求方式)
+            .maxAge(3600);
+    }
+}
+</code></pre>
+<h3 id="局部配置跨域">局部配置跨域</h3>
+<ul>
+<li>在方法上（<code>@RequestMapping</code>）使用注解 <code>@CrossOrigin</code>：</li>
+</ul>
+<pre><code class="language-java"> 	@RestController
+	@GetMapping(&quot;/hello&quot;)
+    @CrossOrigin(&quot;http://localhost:8080&quot;) 
+    public String index( ){
+        return &quot;Hello World&quot;;
+    }
+</code></pre>
+<ul>
+<li>在控制器（<code>@Controller</code>）上使用注解 <code>@CrossOrigin</code> ：</li>
+</ul>
+<pre><code class="language-java">@RestController
+@CrossOrigin(origins = &quot;http://localhost:8080&quot;, maxAge = 3600)
+public class HelloController {
+   @GetMapping(&quot;/hello&quot;)
+   public String index( ){
+        return &quot;Hello World&quot;;
+    }
+}
+</code></pre>
+<p><strong>参考资料</strong></p>
+<ul>
+<li>[跨域问题与SpringBoot解决方案][https://zhuanlan.zhihu.com/p/68901046]</li>
+<li>[SpringBoot 实现前后端分离的跨域访问（CORS）][https://www.jianshu.com/p/477e7eaa6c2f]</li>
+</ul>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AF%E8%B7%A8%E5%9F%9F">什么是跨域？</a></li>
+<li><a href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E8%B7%A8%E5%9F%9F">为什么要跨域？</a></li>
+<li><a href="#springboot%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98">SpringBoot解决跨域问题</a>
+<ul>
+<li><a href="#%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE%E8%B7%A8%E5%9F%9F">全局配置跨域</a></li>
+<li><a href="#%E5%B1%80%E9%83%A8%E9%85%8D%E7%BD%AE%E8%B7%A8%E5%9F%9F">局部配置跨域</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://towelong.github.io//post/springboot-exception">
+              <h3 class="post-title">
+                SpringBoot全局异常处理与自定义异常处理
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/towelong" target="_blank">ToWeLong</a> | 
+  <a class="rss" href="https://towelong.github.io//atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+
+  let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+  // This should probably be throttled.
+  // Especially because it triggers during smooth scrolling.
+  // https://lodash.com/docs/4.17.10#throttle
+  // You could do like...
+  // window.addEventListener("scroll", () => {
+  //    _.throttle(doThatStuff, 100);
+  // });
+  // Only not doing it here to keep this Pen dependency-free.
+
+  window.addEventListener("scroll", event => {
+    let fromTop = window.scrollY;
+
+    mainNavLinks.forEach((link, index) => {
+      let section = document.getElementById(decodeURI(link.hash).substring(1));
+      let nextSection = null
+      if (mainNavLinks[index + 1]) {
+        nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+      }
+      if (section.offsetTop <= fromTop) {
+        if (nextSection) {
+          if (nextSection.offsetTop > fromTop) {
+            link.classList.add("current");
+          } else {
+            link.classList.remove("current");    
+          }
+        } else {
+          link.classList.add("current");
+        }
+      } else {
+        link.classList.remove("current");
+      }
+    });
+  });
+
+</script>
+
+      </div>
+    </div>
+  </body>
+</html>

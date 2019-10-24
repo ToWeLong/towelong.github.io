@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://towelong.github.io/</id>
     <title>WeLong&apos;闲言碎语</title>
-    <updated>2019-10-23T06:16:50.925Z</updated>
+    <updated>2019-10-24T05:07:59.005Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://towelong.github.io/"/>
     <link rel="self" href="https://towelong.github.io//atom.xml"/>
@@ -10,6 +10,68 @@
     <logo>https://towelong.github.io//images/avatar.png</logo>
     <icon>https://towelong.github.io//favicon.ico</icon>
     <rights>All rights reserved 2019, WeLong&apos;闲言碎语</rights>
+    <entry>
+        <title type="html"><![CDATA[SpringBoot解决跨域问题]]></title>
+        <id>https://towelong.github.io//post/springboot-cors</id>
+        <link href="https://towelong.github.io//post/springboot-cors">
+        </link>
+        <updated>2019-10-24T05:06:13.000Z</updated>
+        <summary type="html"><![CDATA[<h2 id="什么是跨域">什么是跨域？</h2>
+<p>定义：浏览器从一个域名的网页取请求另一个域名下的东西。通俗点说，浏览器直接从A域访问B域中的资源是不被允许的，如果想要访问，就需要进行一步操作，这操作就叫“跨域”。例如，你从百度的页面，点击一个按钮，请求了新浪的一个接口，这就进行了跨域。不单单只有域名不同就是跨域，域名、端口、协议其一不同就是不同的域，请求资源需要跨域。</p>
+]]></summary>
+        <content type="html"><![CDATA[<h2 id="什么是跨域">什么是跨域？</h2>
+<p>定义：浏览器从一个域名的网页取请求另一个域名下的东西。通俗点说，浏览器直接从A域访问B域中的资源是不被允许的，如果想要访问，就需要进行一步操作，这操作就叫“跨域”。例如，你从百度的页面，点击一个按钮，请求了新浪的一个接口，这就进行了跨域。不单单只有域名不同就是跨域，域名、端口、协议其一不同就是不同的域，请求资源需要跨域。</p>
+<!-- more -->
+<h2 id="为什么要跨域">为什么要跨域？</h2>
+<p>为什么需要跨域，而不直接访问其他域下的资源呢？这是浏览器的限制，专业点说叫浏览器同源策略限制。主要是为了安全考虑。现在的安全框架，一般请求的时候header中不是都存个token嘛，你要是用这个token去正常访问A域下的东西是没问题的，然后又去访问了B域，结果阴差阳错的还带着这个token，那么B域，或者说B网站是不是就可以拿着你的token去A域下做点什么呢，这就相当危险了。所以浏览器加上了所谓的浏览器同源策略限制。但是为了我们真的需要从A域下访问B的资源（正常访问），就需要用到跨域，跨越这个限制了。</p>
+<h2 id="springboot解决跨域问题">SpringBoot解决跨域问题</h2>
+<blockquote>
+<p><code>SpringBoot</code>可以基于<code>Cors</code>解决跨域问题，<code>Cors</code>是一种机制，告诉我们的后台，哪边（<code>origin</code>）来的请求可以访问服务器的数据。</p>
+</blockquote>
+<h3 id="全局配置跨域">全局配置跨域</h3>
+<pre><code class="language-java">@Configuration
+public class GlobalCors implements WebMvcConfigurer {
+
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping(&quot;/**&quot;) // 添加跨域路由路径
+            .allowedOrigins(&quot;*&quot;) // 放行哪些原始域
+            .allowCredentials(true) // 是否发送Cookie信息
+            .allowedMethods(&quot;GET&quot;, &quot;POST&quot;, &quot;PUT&quot;, &quot;DELETE&quot;) // 放行哪些原始域(请求方式)
+            .maxAge(3600);
+    }
+}
+</code></pre>
+<h3 id="局部配置跨域">局部配置跨域</h3>
+<ul>
+<li>在方法上（<code>@RequestMapping</code>）使用注解 <code>@CrossOrigin</code>：</li>
+</ul>
+<pre><code class="language-java"> 	@RestController
+	@GetMapping(&quot;/hello&quot;)
+    @CrossOrigin(&quot;http://localhost:8080&quot;) 
+    public String index( ){
+        return &quot;Hello World&quot;;
+    }
+</code></pre>
+<ul>
+<li>在控制器（<code>@Controller</code>）上使用注解 <code>@CrossOrigin</code> ：</li>
+</ul>
+<pre><code class="language-java">@RestController
+@CrossOrigin(origins = &quot;http://localhost:8080&quot;, maxAge = 3600)
+public class HelloController {
+   @GetMapping(&quot;/hello&quot;)
+   public String index( ){
+        return &quot;Hello World&quot;;
+    }
+}
+</code></pre>
+<p><strong>参考资料</strong></p>
+<ul>
+<li>[跨域问题与SpringBoot解决方案][https://zhuanlan.zhihu.com/p/68901046]</li>
+<li>[SpringBoot 实现前后端分离的跨域访问（CORS）][https://www.jianshu.com/p/477e7eaa6c2f]</li>
+</ul>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[SpringBoot全局异常处理与自定义异常处理]]></title>
         <id>https://towelong.github.io//post/springboot-exception</id>
