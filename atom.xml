@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://towelong.github.io/</id>
+    <id>https://towelong.cn</id>
     <title>WeLong&apos;闲言碎语</title>
-    <updated>2019-10-24T05:23:23.489Z</updated>
+    <updated>2019-10-24T05:28:18.770Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://towelong.github.io/"/>
-    <link rel="self" href="https://towelong.github.io//atom.xml"/>
+    <link rel="alternate" href="https://towelong.cn"/>
+    <link rel="self" href="https://towelong.cn/atom.xml"/>
     <subtitle>学的不多，用心就好！</subtitle>
-    <logo>https://towelong.github.io//images/avatar.png</logo>
-    <icon>https://towelong.github.io//favicon.ico</icon>
+    <logo>https://towelong.cn/images/avatar.png</logo>
+    <icon>https://towelong.cn/favicon.ico</icon>
     <rights>All rights reserved 2019, WeLong&apos;闲言碎语</rights>
     <entry>
         <title type="html"><![CDATA[SpringBoot解决跨域问题]]></title>
-        <id>https://towelong.github.io//post/springboot-cors</id>
-        <link href="https://towelong.github.io//post/springboot-cors">
+        <id>https://towelong.cn/post/springboot-cors</id>
+        <link href="https://towelong.cn/post/springboot-cors">
         </link>
         <updated>2019-10-24T05:06:13.000Z</updated>
         <summary type="html"><![CDATA[<h2 id="什么是跨域">什么是跨域？</h2>
@@ -74,8 +74,8 @@ public class HelloController {
     </entry>
     <entry>
         <title type="html"><![CDATA[SpringBoot全局异常处理与自定义异常处理]]></title>
-        <id>https://towelong.github.io//post/springboot-exception</id>
-        <link href="https://towelong.github.io//post/springboot-exception">
+        <id>https://towelong.cn/post/springboot-exception</id>
+        <link href="https://towelong.cn/post/springboot-exception">
         </link>
         <updated>2019-10-23T05:55:43.000Z</updated>
         <summary type="html"><![CDATA[<blockquote>
@@ -207,8 +207,8 @@ public class HelloController {
     </entry>
     <entry>
         <title type="html"><![CDATA[SpringBoot盐与密码加密]]></title>
-        <id>https://towelong.github.io//post/springboot-yan-yu-mi-ma-jia-mi</id>
-        <link href="https://towelong.github.io//post/springboot-yan-yu-mi-ma-jia-mi">
+        <id>https://towelong.cn/post/springboot-yan-yu-mi-ma-jia-mi</id>
+        <link href="https://towelong.cn/post/springboot-yan-yu-mi-ma-jia-mi">
         </link>
         <updated>2019-10-22T10:24:01.000Z</updated>
         <summary type="html"><![CDATA[<blockquote>
@@ -253,7 +253,7 @@ public class HelloController {
     }
 </code></pre>
 <p>这是一小段测试代码，然后加密方式不止<code>BCRYPT</code>这种，也是就盐加密，我选的是这种，其实还有很多具体查看官方文档。<br>
-<img src="https://towelong.github.io//post-images/1571739897849.png" alt=""></p>
+<img src="https://towelong.cn/post-images/1571739897849.png" alt=""></p>
 ]]></content>
     </entry>
 </feed>
