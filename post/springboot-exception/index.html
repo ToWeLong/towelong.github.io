@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>SpringBoot全局异常处理与自定义异常处理 | WeLong&#39;闲言碎语</title>
 <meta name="description" content="学的不多，用心就好！" />
-<link rel="shortcut icon" href="https://towelong.cn/favicon.ico?v=1571894896982">
+<link rel="shortcut icon" href="https://towelong.cn/favicon.ico?v=1571895374264">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://towelong.cn/styles/main.css">
@@ -20,7 +20,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://towelong.cn">
-  <img class="avatar" src="https://towelong.cn/images/avatar.png?v=1571894896982" alt="">
+  <img class="avatar" src="https://towelong.cn/images/avatar.png?v=1571895374264" alt="">
   </a>
   <h1 class="site-title">
     WeLong&#39;闲言碎语
@@ -158,7 +158,7 @@ public class HttpException extends RuntimeException {
 }
 </code></pre>
 <p>之后所有的自定义异常类都去继承<code>HttpException</code>，然后还有很重要的一点是为什么<code>HttpException</code>不去继承<code>Exception</code>这个类，而去继承<code>RuntimeException</code>这个类呢？原因请看<br>
-[Java自定义异常，应该继承Exception还是Runtime Exception，为什么？][https://www.zhihu.com/question/51970444]</p>
+<a href="https://www.zhihu.com/question/51970444">Java自定义异常，应该继承Exception还是Runtime Exception，为什么？</a></p>
 <p>然后在此示例中，我创建了一个<code>NotFound</code>类。</p>
 <pre><code class="language-java">@Data
 public class NotFound extends HttpException {

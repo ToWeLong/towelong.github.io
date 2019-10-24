@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://towelong.cn</id>
     <title>WeLong&apos;闲言碎语</title>
-    <updated>2019-10-24T05:28:18.770Z</updated>
+    <updated>2019-10-24T05:36:16.981Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://towelong.cn"/>
     <link rel="self" href="https://towelong.cn/atom.xml"/>
@@ -67,8 +67,8 @@ public class HelloController {
 </code></pre>
 <p><strong>参考资料</strong></p>
 <ul>
-<li>[跨域问题与SpringBoot解决方案][https://zhuanlan.zhihu.com/p/68901046]</li>
-<li>[SpringBoot 实现前后端分离的跨域访问（CORS）][https://www.jianshu.com/p/477e7eaa6c2f]</li>
+<li><a href="https://zhuanlan.zhihu.com/p/68901046">跨域问题与SpringBoot解决方案</a></li>
+<li><a href="https://www.jianshu.com/p/477e7eaa6c2f">SpringBoot 实现前后端分离的跨域访问（CORS）</a></li>
 </ul>
 ]]></content>
     </entry>
@@ -143,7 +143,7 @@ public class HttpException extends RuntimeException {
 }
 </code></pre>
 <p>之后所有的自定义异常类都去继承<code>HttpException</code>，然后还有很重要的一点是为什么<code>HttpException</code>不去继承<code>Exception</code>这个类，而去继承<code>RuntimeException</code>这个类呢？原因请看<br>
-[Java自定义异常，应该继承Exception还是Runtime Exception，为什么？][https://www.zhihu.com/question/51970444]</p>
+<a href="https://www.zhihu.com/question/51970444">Java自定义异常，应该继承Exception还是Runtime Exception，为什么？</a></p>
 <p>然后在此示例中，我创建了一个<code>NotFound</code>类。</p>
 <pre><code class="language-java">@Data
 public class NotFound extends HttpException {
