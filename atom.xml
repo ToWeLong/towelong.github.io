@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://towelong.cn</id>
     <title>WeLong&apos;闲言碎语</title>
-    <updated>2019-10-24T05:36:16.981Z</updated>
+    <updated>2019-10-25T09:03:35.638Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://towelong.cn"/>
     <link rel="self" href="https://towelong.cn/atom.xml"/>
@@ -10,6 +10,74 @@
     <logo>https://towelong.cn/images/avatar.png</logo>
     <icon>https://towelong.cn/favicon.ico</icon>
     <rights>All rights reserved 2019, WeLong&apos;闲言碎语</rights>
+    <entry>
+        <title type="html"><![CDATA[SpringBoot整合MyBatis-Plus]]></title>
+        <id>https://towelong.cn/post/springboot-mybatis-plus</id>
+        <link href="https://towelong.cn/post/springboot-mybatis-plus">
+        </link>
+        <updated>2019-10-25T09:02:14.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p><code>MyBatis-Plus</code>是国人开发的一个<code>ORM</code>框架，方便开发人员不用写<code>SQL</code>语句完成一些简单的数据库操作。</p>
+</blockquote>
+<p>之前在学习<code>springboot</code>的时候，我操作数据库用的是<a href="https://docs.spring.io/spring-data/jpa/docs/current/reference/html/">Spring Data JPA</a>这个是<code>spring</code>官方的一个<code>ORM</code>框架，直白的说，为什么不用<code>JPA</code>的原因，就是英语不好，对于官方的文档看不懂，然后我就选择了<code>MyBatis-Plus</code>。</p>
+<h3 id="使用maven进行安装">使用maven进行安装：</h3>
+<pre><code class="language-java">        &lt;!--mybatis Plus--&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;com.baomidou&lt;/groupId&gt;
+            &lt;artifactId&gt;mybatis-plus-boot-starter&lt;/artifactId&gt;
+            &lt;version&gt;3.2.0&lt;/version&gt;
+        &lt;/dependency&gt;
+        &lt;!--mysql--&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;mysql&lt;/groupId&gt;
+            &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+</code></pre>
+<p>这是所需要的依赖库。</p>
+<h3 id="配置applicationyml">配置application.yml</h3>
+<pre><code class="language-java">spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/island-java?useSSL=false&amp;serverTimezone=GMT%2B8
+    username: root
+    password: password
+</code></pre>
+<p>至此，基础配置已经完成了。</p>
+<p>创建一个Mapper接口：</p>
+<pre><code class="language-java">public interface UserMapper extends BaseMapper&lt;UserModel&gt; {
+    
+}
+</code></pre>
+<p>再创建一个User模型：</p>
+<pre><code class="language-java">@Data
+@TableName(value = &quot;user&quot;)
+public class UserModel {
+    @TableId(value = &quot;id&quot;,type = IdType.AUTO)
+    private Long id;
+    private String nickname;
+    private String email;
+    private String password;
+    private String openid;
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
+    private LocalDateTime deletedAt;
+}
+</code></pre>
+<p>然后在启动类上添加<code>@MapperScan</code></p>
+<pre><code class="language-java">@SpringBootApplication
+@MapperScan(&quot;com.example.demo.Dao&quot;)  // UserMapper所在包
+public class DemoApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(DemoApplication.class, args);
+    }
+
+}
+
+</code></pre>
+<p>这样就可以使用<code>MyBatis-Plus</code>了。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[SpringBoot解决跨域问题]]></title>
         <id>https://towelong.cn/post/springboot-cors</id>
