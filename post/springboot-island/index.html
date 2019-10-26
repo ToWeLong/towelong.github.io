@@ -1,0 +1,205 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>使用SpringBoot重构旧岛小样服务端 | WeLong&#39;闲言碎语</title>
+<meta name="description" content="学的不多，用心就好！" />
+<link rel="shortcut icon" href="https://towelong.cn/favicon.ico?v=1572101831592">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://towelong.cn/styles/main.css">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://towelong.cn">
+  <img class="avatar" src="https://towelong.cn/images/avatar.png?v=1572101831592" alt="">
+  </a>
+  <h1 class="site-title">
+    WeLong&#39;闲言碎语
+  </h1>
+  <p class="site-description">
+    学的不多，用心就好！
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/towelong" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              使用SpringBoot重构旧岛小样服务端
+            </h2>
+            <div class="post-info">
+              <span>
+                2019-10-26
+              </span>
+              <span>
+                2 min read
+              </span>
+              
+                <a href="https://towelong.cn/tag/gwA776xMP" class="post-tag">
+                  # SpringBoot
+                </a>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://towelong.cn/post-images/springboot-island.png" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <blockquote>
+<p>之前在慕课网买了一门<code>koa</code>的实战课<a href="https://coding.imooc.com/class/342.html">旧岛小样服务端</a>，学完了有一段时间了，然后现在在学<code>java</code>版的<code>springboot</code>框架然后就试着重构下。</p>
+</blockquote>
+<!-- more -->
+<ul class="contains-task-list">
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-4346479"><label class="task-list-item-label" for="task-item-4346479"> 期刊</label>
+<ul class="contains-task-list">
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-5767256"> <a href="http://bl.7yue.pro/dev/classic.html#id2">获取最新一期<label class="task-list-item-label" for="task-item-5767256"> [获取最新一期](http://bl.7yue.pro/dev/classic.html#id2)</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-7170250"> <a href="http://bl.7yue.pro/dev/classic.html#id3">获取当前一期的下一期<label class="task-list-item-label" for="task-item-7170250"> [获取当前一期的下一期](http://bl.7yue.pro/dev/classic.html#id3)</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-4309734"> <a href="http://bl.7yue.pro/dev/classic.html#id4">获取某一期详细信息<label class="task-list-item-label" for="task-item-4309734"> [获取某一期详细信息](http://bl.7yue.pro/dev/classic.html#id4)</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-6538655"> <a href="http://bl.7yue.pro/dev/classic.html#id5">获取当前一期的上一期<label class="task-list-item-label" for="task-item-6538655"> [获取当前一期的上一期](http://bl.7yue.pro/dev/classic.html#id5)</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-5834935"> <a href="http://bl.7yue.pro/dev/classic.html#id6">获取点赞信息<label class="task-list-item-label" for="task-item-5834935"> [获取点赞信息](http://bl.7yue.pro/dev/classic.html#id6)</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-4339632"> <a href="http://bl.7yue.pro/dev/classic.html#id7">获取我喜欢的期刊<label class="task-list-item-label" for="task-item-4339632"> [获取我喜欢的期刊](http://bl.7yue.pro/dev/classic.html#id7)</label></li>
+</ul>
+</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-2237906"><label class="task-list-item-label" for="task-item-2237906"> 书籍</label>
+<ul class="contains-task-list">
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-4992450"> <a href="http://bl.7yue.pro/dev/book.html#id2">获取热门书籍(概要)<label class="task-list-item-label" for="task-item-4992450"> [获取热门书籍(概要)](http://bl.7yue.pro/dev/book.html#id2)</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-3532282"> <a href="http://bl.7yue.pro/dev/book.html#id3">获取书籍短评<label class="task-list-item-label" for="task-item-3532282"> [获取书籍短评](http://bl.7yue.pro/dev/book.html#id3)</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-5384223"> <a href="http://bl.7yue.pro/dev/book.html#id4">获取喜欢书籍数量<label class="task-list-item-label" for="task-item-5384223"> [获取喜欢书籍数量](http://bl.7yue.pro/dev/book.html#id4)</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-8359402"> <a href="http://bl.7yue.pro/dev/book.html#id5">获取书籍点赞情况<label class="task-list-item-label" for="task-item-8359402"> [获取书籍点赞情况](http://bl.7yue.pro/dev/book.html#id5)</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-4146590"> <a href="http://bl.7yue.pro/dev/book.html#id6">新增短评<label class="task-list-item-label" for="task-item-4146590"> [新增短评](http://bl.7yue.pro/dev/book.html#id6)</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-333"> <a href="http://bl.7yue.pro/dev/book.html#id7">获取热搜关键字<label class="task-list-item-label" for="task-item-333"> [获取热搜关键字](http://bl.7yue.pro/dev/book.html#id7)</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-47848"> <a href="http://bl.7yue.pro/dev/book.html#id8">书籍搜索<label class="task-list-item-label" for="task-item-47848"> [书籍搜索](http://bl.7yue.pro/dev/book.html#id8)</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-2321262"> <a href="http://bl.7yue.pro/dev/book.html#id9">获取书籍详细信息<label class="task-list-item-label" for="task-item-2321262"> [获取书籍详细信息](http://bl.7yue.pro/dev/book.html#id9)</label></li>
+</ul>
+</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-3051505"><label class="task-list-item-label" for="task-item-3051505"> 点赞</label>
+<ul class="contains-task-list">
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-7392250"> <a href="http://bl.7yue.pro/dev/like.html#id2">进行点赞<label class="task-list-item-label" for="task-item-7392250"> [进行点赞](http://bl.7yue.pro/dev/like.html#id2)</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-2875158"> <a href="http://bl.7yue.pro/dev/like.html#id3">取消点赞<label class="task-list-item-label" for="task-item-2875158"> [取消点赞](http://bl.7yue.pro/dev/like.html#id3)</label></li>
+</ul>
+</li>
+</ul>
+
+              </div>
+              <div class="toc-container">
+                
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://towelong.cn/post/springboot-mybatis-plus">
+              <h3 class="post-title">
+                SpringBoot整合MyBatis-Plus
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/towelong" target="_blank">ToWeLong</a> | 
+  <a class="rss" href="https://towelong.cn/atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+
+  let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+  // This should probably be throttled.
+  // Especially because it triggers during smooth scrolling.
+  // https://lodash.com/docs/4.17.10#throttle
+  // You could do like...
+  // window.addEventListener("scroll", () => {
+  //    _.throttle(doThatStuff, 100);
+  // });
+  // Only not doing it here to keep this Pen dependency-free.
+
+  window.addEventListener("scroll", event => {
+    let fromTop = window.scrollY;
+
+    mainNavLinks.forEach((link, index) => {
+      let section = document.getElementById(decodeURI(link.hash).substring(1));
+      let nextSection = null
+      if (mainNavLinks[index + 1]) {
+        nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+      }
+      if (section.offsetTop <= fromTop) {
+        if (nextSection) {
+          if (nextSection.offsetTop > fromTop) {
+            link.classList.add("current");
+          } else {
+            link.classList.remove("current");    
+          }
+        } else {
+          link.classList.add("current");
+        }
+      } else {
+        link.classList.remove("current");
+      }
+    });
+  });
+
+</script>
+
+      </div>
+    </div>
+  </body>
+</html>
