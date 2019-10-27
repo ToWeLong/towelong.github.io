@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://towelong.cn</id>
     <title>WeLong&apos;闲言碎语</title>
-    <updated>2019-10-26T15:04:45.290Z</updated>
+    <updated>2019-10-27T09:07:32.066Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://towelong.cn"/>
     <link rel="self" href="https://towelong.cn/atom.xml"/>
@@ -24,36 +24,18 @@
 <p>之前在慕课网买了一门<code>koa</code>的实战课<a href="https://coding.imooc.com/class/342.html">旧岛小样服务端</a>，学完了有一段时间了，然后现在在学<code>java</code>版的<code>springboot</code>框架然后就试着重构下。</p>
 </blockquote>
 <!-- more -->
+<blockquote>
+<p>根据慕课网课程：从0到1手把手教你用Node.js+KOA2打造超好用的Web框架<br>
+根据旧岛小样koa2服务端的API文档重构，已完成所有接口的编写</p>
+</blockquote>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-636791"><label class="task-list-item-label" for="task-item-636791"> 期刊</label>
-<ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-8999859"> <a href="http://bl.7yue.pro/dev/classic.html#id2">获取最新一期<label class="task-list-item-label" for="task-item-8999859"> [获取最新一期](http://bl.7yue.pro/dev/classic.html#id2)</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-3922142"> <a href="http://bl.7yue.pro/dev/classic.html#id3">获取当前一期的下一期<label class="task-list-item-label" for="task-item-3922142"> [获取当前一期的下一期](http://bl.7yue.pro/dev/classic.html#id3)</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-343634"> <a href="http://bl.7yue.pro/dev/classic.html#id4">获取某一期详细信息<label class="task-list-item-label" for="task-item-343634"> [获取某一期详细信息](http://bl.7yue.pro/dev/classic.html#id4)</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-8054099"> <a href="http://bl.7yue.pro/dev/classic.html#id5">获取当前一期的上一期<label class="task-list-item-label" for="task-item-8054099"> [获取当前一期的上一期](http://bl.7yue.pro/dev/classic.html#id5)</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-1897994"> <a href="http://bl.7yue.pro/dev/classic.html#id6">获取点赞信息<label class="task-list-item-label" for="task-item-1897994"> [获取点赞信息](http://bl.7yue.pro/dev/classic.html#id6)</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-37057"> <a href="http://bl.7yue.pro/dev/classic.html#id7">获取我喜欢的期刊<label class="task-list-item-label" for="task-item-37057"> [获取我喜欢的期刊](http://bl.7yue.pro/dev/classic.html#id7)</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-1666662"><label class="task-list-item-label" for="task-item-1666662"> 微信登录还没有写</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-6802868"><label class="task-list-item-label" for="task-item-6802868"> 完成所有接口测试以及编写</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-8524809"><label class="task-list-item-label" for="task-item-8524809"> 欢迎学习交流</label></li>
 </ul>
-</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-4339980"><label class="task-list-item-label" for="task-item-4339980"> 书籍</label>
-<ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-4361582"> <a href="http://bl.7yue.pro/dev/book.html#id2">获取热门书籍(概要)<label class="task-list-item-label" for="task-item-4361582"> [获取热门书籍(概要)](http://bl.7yue.pro/dev/book.html#id2)</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-8027901"> <a href="http://bl.7yue.pro/dev/book.html#id3">获取书籍短评<label class="task-list-item-label" for="task-item-8027901"> [获取书籍短评](http://bl.7yue.pro/dev/book.html#id3)</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-3731563"> <a href="http://bl.7yue.pro/dev/book.html#id4">获取喜欢书籍数量<label class="task-list-item-label" for="task-item-3731563"> [获取喜欢书籍数量](http://bl.7yue.pro/dev/book.html#id4)</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-8785552"> <a href="http://bl.7yue.pro/dev/book.html#id5">获取书籍点赞情况<label class="task-list-item-label" for="task-item-8785552"> [获取书籍点赞情况](http://bl.7yue.pro/dev/book.html#id5)</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-7655133"> <a href="http://bl.7yue.pro/dev/book.html#id6">新增短评<label class="task-list-item-label" for="task-item-7655133"> [新增短评](http://bl.7yue.pro/dev/book.html#id6)</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-1604635"> <a href="http://bl.7yue.pro/dev/book.html#id7">获取热搜关键字<label class="task-list-item-label" for="task-item-1604635"> [获取热搜关键字](http://bl.7yue.pro/dev/book.html#id7)</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-4876971"> <a href="http://bl.7yue.pro/dev/book.html#id8">书籍搜索<label class="task-list-item-label" for="task-item-4876971"> [书籍搜索](http://bl.7yue.pro/dev/book.html#id8)</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-1558684"> <a href="http://bl.7yue.pro/dev/book.html#id9">获取书籍详细信息<label class="task-list-item-label" for="task-item-1558684"> [获取书籍详细信息](http://bl.7yue.pro/dev/book.html#id9)</label></li>
-</ul>
-</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-9406719"><label class="task-list-item-label" for="task-item-9406719"> 点赞</label>
-<ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-3175022"> <a href="http://bl.7yue.pro/dev/like.html#id2">进行点赞<label class="task-list-item-label" for="task-item-3175022"> [进行点赞](http://bl.7yue.pro/dev/like.html#id2)</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-4375310"> <a href="http://bl.7yue.pro/dev/like.html#id3">取消点赞<label class="task-list-item-label" for="task-item-4375310"> [取消点赞](http://bl.7yue.pro/dev/like.html#id3)</label></li>
-</ul>
-</li>
-</ul>
+<p>2019年10月27日：<br>
+使用springboot重构完了旧岛服务端，欢迎学习交流</p>
+<p>https://github.com/ToWeLong/island-java</p>
 ]]></content>
     </entry>
     <entry>
