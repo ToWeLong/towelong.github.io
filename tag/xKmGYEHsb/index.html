@@ -2,7 +2,7 @@
   <head>
   <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>WeLong&#39;闲言碎语</title>
+<title>java | WeLong&#39;闲言碎语</title>
 <meta name="description" content="学的不多，用心就好！" />
 <link rel="shortcut icon" href="https://towelong.cn/favicon.ico?v=1572268681122">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -74,14 +74,49 @@
   </div>
 </div>
 
-
-        <div class="tags-container">
-          
-            <a class="tag" href="https://towelong.cn/tag/xKmGYEHsb">java</a>
-          
-            <a class="tag" href="https://towelong.cn/tag/gwA776xMP">SpringBoot</a>
-          
+        <div class="current-tag-container">
+            <h2 class="title">
+                标签：# java
+            </h2> 
         </div>
+        <div class="post-container">
+  
+    <article class="post">
+      <a href="https://towelong.cn/post/java11-jre">
+        <h2 class="post-title">解决安装Java11不生成jre的问题</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2019-10-28
+        </span>
+        <span>
+          1 min read
+        </span>
+        
+          <a href="https://towelong.cn/tag/xKmGYEHsb" class="post-tag">
+            # java
+          </a>
+        
+      </div>
+      
+      <div class="post-abstract">
+        <blockquote>
+<p>之前也碰到过安装JDK不会自动生成JRE的问题，但是一直没去解决，因为这个问题出现在同学的电脑上，我自己找的那个JDK是会自动生成JRE的，然后最后也是拿我这个安装包解决的。</p>
+</blockquote>
+<p>首先进入JDK安装的根目录下，然后执行以下命令：</p>
+<pre><code class="language-java">bin\jlink.exe --module-path jmods --add-modules java.desktop --output jre
+</code></pre>
+<p>然后，在环境变量中配置JDK以及JRE即可。</p>
+
+      </div>
+    </article>
+  
+</div>
+
+        <div class="pagination-container">
+  
+  
+</div>
 
         <div class="site-footer">
   Powered by <a href="https://github.com/towelong" target="_blank">ToWeLong</a> | 

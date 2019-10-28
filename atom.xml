@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://towelong.cn</id>
     <title>WeLong&apos;闲言碎语</title>
-    <updated>2019-10-27T09:07:32.066Z</updated>
+    <updated>2019-10-28T13:18:03.698Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://towelong.cn"/>
     <link rel="self" href="https://towelong.cn/atom.xml"/>
@@ -10,6 +10,30 @@
     <logo>https://towelong.cn/images/avatar.png</logo>
     <icon>https://towelong.cn/favicon.ico</icon>
     <rights>All rights reserved 2019, WeLong&apos;闲言碎语</rights>
+    <entry>
+        <title type="html"><![CDATA[解决安装Java11不生成jre的问题]]></title>
+        <id>https://towelong.cn/post/java11-jre</id>
+        <link href="https://towelong.cn/post/java11-jre">
+        </link>
+        <updated>2019-10-28T13:13:11.000Z</updated>
+        <summary type="html"><![CDATA[<blockquote>
+<p>之前也碰到过安装JDK不会自动生成JRE的问题，但是一直没去解决，因为这个问题出现在同学的电脑上，我自己找的那个JDK是会自动生成JRE的，然后最后也是拿我这个安装包解决的。</p>
+</blockquote>
+<p>首先进入JDK安装的根目录下，然后执行以下命令：</p>
+<pre><code class="language-java">bin\jlink.exe --module-path jmods --add-modules java.desktop --output jre
+</code></pre>
+<p>然后，在环境变量中配置JDK以及JRE即可。</p>
+]]></summary>
+        <content type="html"><![CDATA[<blockquote>
+<p>之前也碰到过安装JDK不会自动生成JRE的问题，但是一直没去解决，因为这个问题出现在同学的电脑上，我自己找的那个JDK是会自动生成JRE的，然后最后也是拿我这个安装包解决的。</p>
+</blockquote>
+<p>首先进入JDK安装的根目录下，然后执行以下命令：</p>
+<pre><code class="language-java">bin\jlink.exe --module-path jmods --add-modules java.desktop --output jre
+</code></pre>
+<p>然后，在环境变量中配置JDK以及JRE即可。</p>
+<!-- more -->
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[使用SpringBoot重构旧岛小样服务端]]></title>
         <id>https://towelong.cn/post/springboot-island</id>
@@ -29,9 +53,9 @@
 根据旧岛小样koa2服务端的API文档重构，已完成所有接口的编写</p>
 </blockquote>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-1666662"><label class="task-list-item-label" for="task-item-1666662"> 微信登录还没有写</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-6802868"><label class="task-list-item-label" for="task-item-6802868"> 完成所有接口测试以及编写</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-8524809"><label class="task-list-item-label" for="task-item-8524809"> 欢迎学习交流</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-4530415"><label class="task-list-item-label" for="task-item-4530415"> 微信登录还没有写</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-7829199"><label class="task-list-item-label" for="task-item-7829199"> 完成所有接口测试以及编写</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-2511577"><label class="task-list-item-label" for="task-item-2511577"> 欢迎学习交流</label></li>
 </ul>
 <p>2019年10月27日：<br>
 使用springboot重构完了旧岛服务端，欢迎学习交流</p>

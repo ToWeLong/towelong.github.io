@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>SpringBoot盐与密码加密 | WeLong&#39;闲言碎语</title>
+<title>解决安装Java11不生成jre的问题 | WeLong&#39;闲言碎语</title>
 <meta name="description" content="学的不多，用心就好！" />
 <link rel="shortcut icon" href="https://towelong.cn/favicon.ico?v=1572268681122">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -77,82 +77,50 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              SpringBoot盐与密码加密
+              解决安装Java11不生成jre的问题
             </h2>
             <div class="post-info">
               <span>
-                2019-10-22
+                2019-10-28
               </span>
               <span>
-                2 min read
+                1 min read
               </span>
               
-                <a href="https://towelong.cn/tag/gwA776xMP" class="post-tag">
-                  # SpringBoot
+                <a href="https://towelong.cn/tag/xKmGYEHsb" class="post-tag">
+                  # java
                 </a>
               
             </div>
             
-              <img class="post-feature-image" src="https://towelong.cn/post-images/springboot-yan-yu-mi-ma-jia-mi.png" alt="">
-            
             <div class="post-content-wrapper">
               <div class="post-content">
                 <blockquote>
-<p>在学习<code>SpringBoot</code>的过程中，碰到了用户密码加密的问题，因为密码是不能以明文储存的，这是对用户负责</p>
+<p>之前也碰到过安装JDK不会自动生成JRE的问题，但是一直没去解决，因为这个问题出现在同学的电脑上，我自己找的那个JDK是会自动生成JRE的，然后最后也是拿我这个安装包解决的。</p>
 </blockquote>
-<!-- more -->
-<h2 id="首先">首先</h2>
-<p>​        我在百度和谷歌找了好多种解决方案，但是答案基本上千篇一律，都是一样的，而且只有部分才能解决问题，然后多亏<code>LinCMS</code>开源团队找到了我想要的解决方案，此前在查资料的过程中，找到的一种解决方案中，有一种可以解决，就是<code>Spring security</code>中的<code>BCryptPasswordEncoder</code>方法对密码进行加密，我测试了一下确实可以，而且和我预想中的一模一样，就是同一个密码在加密的时候每次得到的加密字符串都是不一样的，但是唯一一点让我很无奈的是，用<code>Spring security</code>会捆绑一系列的配置，况且我也没用到它，所以这个方案直接被我Pass掉了。</p>
-<h2 id="其次">其次</h2>
-<p>​      我再说第二种解决方案，使用<code>jhash</code>、<code>jotp</code></p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">依赖</th>
-<th style="text-align:left">Github地址</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">jhash</td>
-<td style="text-align:left">https://github.com/amdelamar/jhash</td>
-</tr>
-<tr>
-<td style="text-align:left">jotp</td>
-<td style="text-align:left">https://github.com/amdelamar/jotp</td>
-</tr>
-</tbody>
-</table>
-<pre><code class="language-java">    @Test
-    public void test() throws InvalidHashException {
-        char[] password = &quot;Hello World!&quot;.toCharArray();
-        String hash = Hash.password(password).algorithm(Type.BCRYPT).create();
-        System.out.println(hash);
-        if(Hash.password(password).verify(&quot;bcrypt:13:60:16:n::$2a$13$aIPs6auOGff6bWWRNmfZleD1rzUQq2Owk8tSKeM9T8t2QqW7yTud.&quot;)) {
-            // Passwords match. Login successful!
-            System.out.println(&quot;success&quot;);
-        }
-    }
+<p>首先进入JDK安装的根目录下，然后执行以下命令：</p>
+<pre><code class="language-java">bin\jlink.exe --module-path jmods --add-modules java.desktop --output jre
 </code></pre>
-<p>这是一小段测试代码，然后加密方式不止<code>BCRYPT</code>这种，也是就盐加密，我选的是这种，其实还有很多具体查看官方文档。<br>
-<img src="https://towelong.cn/post-images/1571739897849.png" alt=""></p>
+<p>然后，在环境变量中配置JDK以及JRE即可。</p>
+<!-- more -->
 
               </div>
               <div class="toc-container">
-                <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li><a href="#%E9%A6%96%E5%85%88">首先</a></li>
-<li><a href="#%E5%85%B6%E6%AC%A1">其次</a></li>
-</ul>
-</li>
-</ul>
-
+                
               </div>
             </div>
           </article>
         </div>
 
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://towelong.cn/post/springboot-island">
+              <h3 class="post-title">
+                使用SpringBoot重构旧岛小样服务端
+              </h3>
+            </a>
+          </div>
         
 
         
