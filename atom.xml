@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://towelong.cn</id>
     <title>WeLong&apos;闲言碎语</title>
-    <updated>2019-10-28T13:18:03.698Z</updated>
+    <updated>2019-11-16T05:22:30.640Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://towelong.cn"/>
     <link rel="self" href="https://towelong.cn/atom.xml"/>
@@ -10,6 +10,25 @@
     <logo>https://towelong.cn/images/avatar.png</logo>
     <icon>https://towelong.cn/favicon.ico</icon>
     <rights>All rights reserved 2019, WeLong&apos;闲言碎语</rights>
+    <entry>
+        <title type="html"><![CDATA[SpringBoot快速开发API的模板]]></title>
+        <id>https://towelong.cn/post/springboot-cli</id>
+        <link href="https://towelong.cn/post/springboot-cli">
+        </link>
+        <updated>2019-11-16T05:15:35.000Z</updated>
+        <summary type="html"><![CDATA[<blockquote>
+<p>最近有点忙，好久没更新博客了，然后趁空下来了，赶紧做点事情。</p>
+</blockquote>
+]]></summary>
+        <content type="html"><![CDATA[<blockquote>
+<p>最近有点忙，好久没更新博客了，然后趁空下来了，赶紧做点事情。</p>
+</blockquote>
+<!-- more -->
+<p>闲下来之后，我在提取我之前项目的一些重要的部分，好帮助我在下一个项目开始时能够进行快速开发，</p>
+<p>然后这个快速开发模板就诞生了。</p>
+<p>项目地址：https://github.com/ToWeLong/springboot-cli</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[解决安装Java11不生成jre的问题]]></title>
         <id>https://towelong.cn/post/java11-jre</id>
@@ -53,9 +72,9 @@
 根据旧岛小样koa2服务端的API文档重构，已完成所有接口的编写</p>
 </blockquote>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-4530415"><label class="task-list-item-label" for="task-item-4530415"> 微信登录还没有写</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-7829199"><label class="task-list-item-label" for="task-item-7829199"> 完成所有接口测试以及编写</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-2511577"><label class="task-list-item-label" for="task-item-2511577"> 欢迎学习交流</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-8427485"><label class="task-list-item-label" for="task-item-8427485"> 微信登录还没有写</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-9230283"><label class="task-list-item-label" for="task-item-9230283"> 完成所有接口测试以及编写</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-8042794"><label class="task-list-item-label" for="task-item-8042794"> 欢迎学习交流</label></li>
 </ul>
 <p>2019年10月27日：<br>
 使用springboot重构完了旧岛服务端，欢迎学习交流</p>
